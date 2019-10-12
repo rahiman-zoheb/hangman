@@ -1,10 +1,10 @@
-package com.zohebrahiman.hangmanreport.payload;
+package com.zohebrahiman.hangman.payload;
 
 public class GuessResponse {
 	private Long id;
-	private String guess;
+	private Character guess;
 
-	public GuessResponse(Long id, String guess) {
+	public GuessResponse(Long id, Character guess) {
 		super();
 		this.id = id;
 		this.guess = guess;
@@ -18,11 +18,11 @@ public class GuessResponse {
 		this.id = id;
 	}
 
-	public String getGuess() {
+	public Character getGuess() {
 		return guess;
 	}
 
-	public void setGuess(String guess) {
+	public void setGuess(Character guess) {
 		this.guess = guess;
 	}
 

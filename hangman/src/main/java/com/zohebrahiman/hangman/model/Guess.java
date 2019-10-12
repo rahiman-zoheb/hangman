@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "guess")
@@ -15,9 +15,8 @@ public class Guess {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank
-	@Size(max = 140)
-	private String guess;
+	@NotNull
+	private Character guess;
 
 	public Long getId() {
 		return id;
@@ -27,12 +26,11 @@ public class Guess {
 		this.id = id;
 	}
 
-	public String getGuess() {
+	public Character getGuess() {
 		return guess;
 	}
 
-	public void setGuess(String guess) {
+	public void setGuess(Character guess) {
 		this.guess = guess;
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.zohebrahiman.hangmanreport.model;
+package com.zohebrahiman.hangman.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,18 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "guess")
-public class Guess {
+@Table(name = "word")
+public class Word {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotBlank
-	@Size(max = 140)
-	private String guess;
+	private String word;
 
 	public Long getId() {
 		return id;
@@ -27,12 +25,12 @@ public class Guess {
 		this.id = id;
 	}
 
-	public String getGuess() {
-		return guess;
+	public String getWord() {
+		return word;
 	}
 
-	public void setGuess(String guess) {
-		this.guess = guess;
+	public void setWord(String word) {
+		this.word = word;
 	}
 
 }
